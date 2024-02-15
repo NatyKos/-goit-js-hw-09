@@ -1,0 +1,42 @@
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.label-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+input {
+  margin-bottom: 20px;
+  width: 360px;
+  height: 40px;
+  padding-left: 10px;
+}
+.label-email {
+  width: 360px;
+  height: 72px;
+}
+.label-msg {
+  width: 360px;
+  height: 112px;
+}
+form {
+  margin-top: 40px;
+}
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
+}
