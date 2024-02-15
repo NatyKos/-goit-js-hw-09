@@ -1,6 +1,7 @@
 @import url('./reset.css');
 @import url('./gallery.css');
 @import url('./form.css');
+@import 'simplelightbox/dist/simple-lightbox.min.css';
 .link-title {
   font-size: 24px;
   color: blueviolet;
