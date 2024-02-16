@@ -3,8 +3,8 @@ const form = document.querySelector('.feedback-form');
 
 // функція для читання даних, введених в таблиці
 function readFormData() {
-const email = form.email.value;
-const message = form.message.value;
+const email = form.email.value.trim();
+const message = form.message.value.trim();
     return {
         email,
         message
@@ -13,8 +13,8 @@ const message = form.message.value;
 
 // збереження даних в локальне сховище 
 form.addEventListener('input', (event) => {
-    event.preventDefault;
     const data = readFormData(event.currentTarget);
+    event.preventDefault;    
     const jsonData = JSON.stringify(data);
     localStorage.setItem(storageKey, jsonData);
 })
@@ -27,11 +27,15 @@ if (rowData) {
     form.message.value = isData.message
 }
 
-// очищення сховища і форми при натисканні кнопки + виведення даних в консоль
+// якщо всі поля заповнені: очищення сховища і форми при натисканні кнопки + виведення даних в консоль
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(readFormData(form));
-    localStorage.removeItem(storageKey);
-    form.reset();
+    if (form.email.value !== '' && form.message.value !== '') {
+        console.log(readFormData(form));
+        localStorage.removeItem(storageKey);
+        form.reset();
+    } else {
+        return
+    }
 }
-    )
+)
