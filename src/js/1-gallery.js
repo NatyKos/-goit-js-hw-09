@@ -66,6 +66,7 @@ const images = [
   },
 ];
 
+// створення галереї
 function createGallery(images) {
     return images
         .map(
@@ -84,6 +85,7 @@ function createGallery(images) {
 const gallery = document.querySelector('.gallery');
 gallery.innerHTML = createGallery(images);
 
+// модальне вікно + виведення назви з затримкою 250мс 
 new SimpleLightbox('.gallery-item a', {
   captionsData: 'alt',
   captionDelay: 250,

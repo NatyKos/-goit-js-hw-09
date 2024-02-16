@@ -1,31 +1,42 @@
-label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.label-title {
+body {
+  background-color: lavender;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #2e2f42;
+  font-family: Arial, sans-serif;
 }
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 input {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   width: 360px;
   height: 40px;
   padding-left: 10px;
+  font-family: inherit;
 }
-.label-email {
-  width: 360px;
-  height: 72px;
-}
-.label-msg {
+
+textarea {
   width: 360px;
   height: 112px;
+  margin-bottom: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family: inherit;
 }
 form {
-  margin-top: 40px;
+  margin-top: 24px;
+  border-radius: 8px;
+  padding: 24px;
+  width: 408px;
+  height: 312px;
+  border: none;
+  background-color: #ffffff;
 }
 button {
   border-radius: 8px;
@@ -35,8 +46,8 @@ button {
   background: #4e75ff;
   color: #ffffff;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
   border: none;
+}
+button:hover {
+  background: #6c8cff;
 }
