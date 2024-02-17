@@ -13,8 +13,8 @@ const message = form.message.value.trim();
 
 // збереження даних в локальне сховище 
 form.addEventListener('input', (event) => {
-    const data = readFormData(event.currentTarget);
-    event.preventDefault;    
+    const data = readFormData();
+    event.preventDefault();    
     const jsonData = JSON.stringify(data);
     localStorage.setItem(storageKey, jsonData);
 })
@@ -25,12 +25,12 @@ if (rowData) {
     const isData = JSON.parse(rowData);
     form.email.value = isData.email;
     form.message.value = isData.message
-}
+};
 
 // якщо всі поля заповнені: очищення сховища і форми при натисканні кнопки + виведення даних в консоль
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (form.email.value !== '' && form.message.value !== '') {
+    if (form.email.value.trim() !== '' && form.message.value.trim() !== '') {
         console.log(readFormData(form));
         localStorage.removeItem(storageKey);
         form.reset();
