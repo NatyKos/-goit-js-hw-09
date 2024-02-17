@@ -3,14 +3,14 @@ const form = document.querySelector('.feedback-form');
 
 // функція для читання даних, введених в таблиці
 function readFormData() {
-const email = form.email.value.trim();
-const message = form.message.value.trim();
-    return {
-        email,
-        message
-    }
-}
-
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+        return {
+            email,
+            message
+        } 
+} 
+    
 // збереження даних в локальне сховище 
 form.addEventListener('input', (event) => {
     const data = readFormData();
@@ -23,15 +23,19 @@ form.addEventListener('input', (event) => {
 const rowData = localStorage.getItem(storageKey);
 if (rowData) {
     const isData = JSON.parse(rowData);
-    form.email.value = isData.email;
-    form.message.value = isData.message
-};
+    if (isData.email) {
+        form.email.value = isData.email;
+    }
+    if (isData.message) {
+        form.message.value = isData.message
+    }
+}
 
 // якщо всі поля заповнені: очищення сховища і форми при натисканні кнопки + виведення даних в консоль
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (form.email.value.trim() !== '' && form.message.value.trim() !== '') {
-        console.log(readFormData(form));
+        console.log(readFormData());
         localStorage.removeItem(storageKey);
         form.reset();
     } else {
